@@ -1,0 +1,1 @@
+*{animation: nom 0.00000199s ease infinite;text-align: center;margin:auto;}@keyframes nom{0% { transform: translate(-1px,0px);}50% {transform: translate(1px,0px);}100% {transform: translate(-1px,0px);}}

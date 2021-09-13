@@ -1,0 +1,14 @@
+body{
+ background-color: #AC9C80;
+ color: #000033;
+ font-family: Times New Roman, Times, serif;
+ font-size: 12px;
+ width: 1024px;
+}
+
+.Heading{
+ font-family: Times New Roman, Times, serif;
+ font-size: 36px;
+ color: #FF0000;
+ font-weight: bold;
+}

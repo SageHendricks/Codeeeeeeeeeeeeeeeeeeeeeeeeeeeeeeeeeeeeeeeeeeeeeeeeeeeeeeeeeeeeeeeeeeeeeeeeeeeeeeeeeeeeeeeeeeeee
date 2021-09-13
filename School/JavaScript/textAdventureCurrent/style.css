@@ -1,0 +1,22 @@
+*{
+  text-align:center;
+	font-family: 'Saira Condensed', sans-serif;
+}
+
+body{
+	width:80%;
+	margin: auto;
+}
+
+div, hr{
+  display: none;
+}
+
+#start{
+  display: block;
+}
+
+img{
+  width: 1000px;
+  margin: auto;
+}

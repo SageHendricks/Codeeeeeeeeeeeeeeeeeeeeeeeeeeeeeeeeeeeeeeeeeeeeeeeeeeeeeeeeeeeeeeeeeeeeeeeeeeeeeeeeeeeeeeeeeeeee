@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+    background-color: #FDFCDC;
+}
+#wrapper{
+    width:60%;
+    margin:auto;
+}
+
+/*Header*/
+
+.topBar{
+    height:60px;
+    width:80%;
+    margin: auto;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li{
+    float:right;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 0; 
+}
+
+.left{
+    float:left;
+}
+
+/*Body*/
+
+main{
+    padding-top: 100px;
+}
+
+.aboutImage{
+    height:300px;
+}
+
+
+
+/*AboutUs*/
+
+
+
+/*colors*/
+
+.color2{
+    background-color: #FED9B7;
+}

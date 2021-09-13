@@ -1,0 +1,50 @@
+*{
+    text-align: center;
+}
+#wrapper{
+    width: 80%;
+    margin: auto;
+}
+
+p{
+    animation: nom 0.011s ease infinite;
+}
+h3{
+    animation: nom2 0.011s ease infinite;
+}
+input{
+    animation: nom3 0.011s ease infinite;
+}
+@keyframes nom{
+    0% {
+        transform: translate(-1px,0px);
+    }
+    50% {
+        transform: translate(1px,1px);
+    }
+    100% {
+        transform: translate(-1px,0px);
+    }
+}
+@keyframes nom2{
+    0% {
+        transform: translate(-1px,0px);
+    }
+    50% {
+        transform: translate(1px,1px);
+    }
+    100% {
+        transform: translate(-1px,0px);
+    }
+}
+@keyframes nom3{
+    0% {
+        transform: translate(-1px,0px);
+    }
+    50% {
+        transform: translate(1px,1px);
+    }
+    100% {
+        transform: translate(-1px,0px);
+    }
+}

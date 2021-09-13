@@ -1,0 +1,10 @@
+div, hr{
+    display: none;
+    width:60%;
+    margin:auto;
+  }
+  
+  #start{
+    display: block;
+  }
+  

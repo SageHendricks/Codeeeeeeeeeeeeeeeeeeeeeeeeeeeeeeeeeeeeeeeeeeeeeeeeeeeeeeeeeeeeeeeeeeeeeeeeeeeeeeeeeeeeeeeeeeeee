@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+.gallery > * {
+    border: 2px solid rgb(0, 0, 0);
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+@media screen and (min-width: 901px){
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(11, 100px);
+        grid-template-rows: repeat(7, 100px);
+        background-color: grey;
+
+        margin:auto;
+        height: 700px;
+        width: 1100px;
+    }
+    .div1{
+        grid-column:  span 2;
+        grid-row: span 1;
+        background-image: url(images/01.jpg);
+    }
+    .div2{
+        grid-column: span 3;
+        grid-row: span 1;
+        background-image: url(images/02.jpg);
+    }
+    .div3{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/03.jpg);
+    }
+    .div4{
+        grid-column: span 1;
+        grid-row: span 6;
+        background-image: url(images/04.jpg);
+    }
+    .div5{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/05.jpg);
+    }
+    .div6{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/07.jpg);
+    }
+    .div7{
+        grid-column: span 4;
+        grid-row: span 4;  
+        background-image: url(images/06.jpg);
+    }
+    .div8{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/08.jpg);
+    }
+    .div9{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/09.jpg);
+    }
+    .div10{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/10.jpg);
+    }
+    .div11{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/11.jpg);
+    }
+    .div12{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/14.jpg);
+    }
+    .div13{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/12.jpg);
+    }
+    .div14{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/01.jpg);
+    }
+    .div15{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/17.jpg);
+    }
+    .div16{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/12.jpg);
+    }
+    .div17{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/16.jpg);
+    }
+    .div18{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/18.jpg);
+    }
+    .div19{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/19.jpg);
+    }
+    .div20{
+        grid-column: span 3;
+        grid-row: span 1;
+        background-image: url(images/11.jpg);
+    }
+    .div21{
+        grid-column: span 4;
+        grid-row: span 1;
+        background-image: url(images/18.jpg);
+    }
+}
+@media screen and (max-width: 900px){
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(9, 100px);
+        background-color: grey;
+    
+        margin:auto;
+        height: 800px;
+        width: 900px;
+    }
+    .div1{
+        grid-column:  span 2;
+        grid-row: span 1;
+        background-image: url(images/01.jpg);
+    }
+    .div2{
+        grid-column: span 3;
+        grid-row: span 1;
+        background-image: url(images/02.jpg);
+    }
+    .div3{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/03.jpg);
+    }
+    .div4{
+        grid-column: span 1;
+        grid-row: span 6;
+        background-image: url(images/04.jpg);
+    }
+    .div5{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/05.jpg);
+    }
+    .div6{
+        grid-column: span 4;
+        grid-row: span 4;
+        background-image: url(images/06.jpg);
+    }
+    .div7{
+        grid-column: span 2;
+        grid-row: span 2;  
+        background-image: url(images/07.jpg);
+    }
+    .div8{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/08.jpg);
+    }
+    .div9{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/09.jpg);
+    }
+    .div10{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/10.jpg);
+    }
+    .div11{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/11.jpg);
+    }
+    .div12{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/12.jpg);
+    }
+    .div13{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/13.jpg);
+    }
+    .div14{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/14.jpg);
+    }
+    .div15{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/15.jpg);
+    }
+    .div16{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/16.jpg);
+    }
+    .div17{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/17.jpg);
+    }
+    .div18{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/18.jpg);
+    }
+    .div19{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/19.jpg);
+    }
+    .div20{
+        grid-column: span 4;
+        grid-row: span 1;
+        background-image: url(images/20.jpg);
+    }
+    .div21{
+        grid-column: span 4;
+        grid-row: span 1;
+        background-image: url(images/01.jpg);
+    }
+}
+@media screen and (max-width: 600px){
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(17, 100px);
+        background-color: grey;
+    
+        margin:auto;
+        height: 1700px;
+        width: 500px;
+    }
+    .div1{
+        grid-column:  span 2;
+        grid-row: span 1;
+        background-image: url(images/01.jpg);
+    }
+    .div2{
+        grid-column: span 3;
+        grid-row: span 1;
+        background-image: url(images/02.jpg);
+    }
+    .div3{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/03.jpg);
+    }
+    .div4{
+        grid-column: span 1;
+        grid-row: span 6;
+        background-image: url(images/04.jpg);
+    }
+    .div5{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/05.jpg);
+    }
+    .div6{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/01.jpg);
+    }
+    .div7{
+        grid-column: span 2;
+        grid-row: span 2;  
+        background-image: url(images/07.jpg);
+    }
+    .div8{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/02.jpg);
+    }
+    .div9{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/09.jpg);
+    }
+    .div10{
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: url(images/10.jpg);
+    }
+    .div11{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/11.jpg);
+    }
+    .div12{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/12.jpg);
+    }
+    .div13{
+        grid-column: span 4;
+        grid-row: span 4;
+        background-image: url(images/17.jpg);
+    }
+    .div14{
+        grid-column: span 1;
+        grid-row: span 3;
+        background-image: url(images/14.jpg);
+    }
+    .div15{
+        grid-column: span 1;
+        grid-row: span 4;
+        background-image: url(images/17.jpg);
+    }
+    .div16{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/18.jpg);
+    }
+    .div17{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/12.jpg);
+    }
+    .div18{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/16.jpg);
+    }
+    .div19{
+        grid-column: span 2;
+        grid-row: span 2;
+        background-image: url(images/18.jpg);
+    }
+    .div20{
+        grid-column: span 2;
+        grid-row: span 1;
+        background-image: url(images/19.jpg);
+    }
+    .div21{
+        grid-column: span 4;
+        grid-row: span 1;
+        background-image: url(images/18.jpg);
+    }
+}

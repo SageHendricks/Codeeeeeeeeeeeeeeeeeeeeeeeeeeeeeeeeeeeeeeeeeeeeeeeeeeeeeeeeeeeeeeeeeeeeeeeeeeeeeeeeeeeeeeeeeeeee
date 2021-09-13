@@ -1,0 +1,55 @@
+#bodyWrapper{
+    width: 80%;
+    margin:auto;
+    margin-top: 1em;
+}
+
+/*header*/
+
+#header{
+    display:grid;
+    grid-template-columns: fr fr fr fr fr fr;
+    grid-row: 10px fr 10px;
+    text-align: center;
+}
+
+#sandwhich{
+    grid-row: 2;
+    grid-column: 1;
+}
+#date{
+    grid-row: 2;
+    grid-column: 3;
+}
+#settings{
+    grid-row: 2;
+    grid-column: 5;
+}
+
+/*stats*/
+
+#stats{
+    display: grid;
+    grid-template-columns: fr 2fr fr;
+    grid-template-rows: fr fr;
+    text-align: center;
+}
+
+#headStats{
+    grid-row: 1;
+    grid-column: 1/4;
+}
+#goalsFitness{
+    grid-row: 2/3;
+    grid-column: 1;
+}
+#budget{
+    grid-row: 2/3;
+    grid-column: 2;
+}
+#calories{
+    grid-row: 2/3;
+    grid-column:s 2/4;
+}
+
+/*le stats 1*/

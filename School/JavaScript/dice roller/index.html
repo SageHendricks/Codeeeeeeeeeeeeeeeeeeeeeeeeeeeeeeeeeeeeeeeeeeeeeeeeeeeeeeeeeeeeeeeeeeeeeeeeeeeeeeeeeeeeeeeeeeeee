@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiceRoler</title>
+</head>
+<body>
+    <button onclick='RoleTemp(100)' >d100</button>
+    <button onclick='RoleTemp(20)' >d20</button>
+    <button onclick='RoleTemp(10)' >d10</button>
+    <button onclick='RoleTemp(8)' >d8</button>
+    <button onclick='RoleTemp(6)' >d6</button>
+    <button onclick='RoleTemp(4)' >d4</button>
+
+    <br>
+
+    <p id="reply">role</p>
+    <script src="JS/var.js"></script>
+    <script src="JS/role.js"></script>
+    <script src="JS/add.js"></script>
+    <script>
+        //var role ,x;function RoleTemp(role){role = Math.floor(Math.random() * x) + 1;reply = 'd' + x + ' role: ' + role;document.getElementById('reply').innerHTML = reply;console.log(reply);}function d100(){x = 100;RoleTemp(x);};function d20(){x = 20;RoleTemp(x);};function d10(){x = 10;RoleTemp(x);};function d8(){x = 8;RoleTemp(x);};function d6(){x = 6;RoleTemp(x);};function d4(){x = 4;RoleTemp(x);};
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+    background-color: 545454;
+    padding: 15px;
+}
+
+#bodyWrapper{
+    background-color: #B68F40;
+    margin: 10px;
+    padding: 10px;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    color: #B6CCA1;
+}
+
+h1{
+    background-color: #30011E;
+    margin: 15px;
+    padding: 15px;
+}
+
+p{
+    background-color: #B68F40;
+    padding: 10px;
+    margin: 10px;
+}
+
+table, th, td{
+    border: 1px solid #D7FCD4;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+tr, td, th{
+    margin: 10px;
+    padding: 10px;
+}
+

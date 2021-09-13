@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id='start' class="div">
+		<h2>What is your name?</h2>
+		<input type="text" id="name">
+		<button id='submit' onclick='submit(0, 1)'>Submit</button>
+	</div>
+	<div id='class' class="div">
+		<h2 id='welcome'>Hello <span id='nameOutput'>Error 404 Name Not Found</span>! Welcome to the game, please pick a
+			class</h2>
+		<button onclick='main(1, 2)'>Archer</button>
+		<button onclick='main(1, 2)'>Fighter</button>
+		<button onclick='main(1, 2)'>Rogue</button>
+	</div>
+	<div id='wake' class="div">
+		<h2>You wake up and your brother is missing, there is a note on the table and it reads that he has been
+			kidnapped<br>Do you wanna go on a quest?</h2>
+		<button onclick='main(2, 3)'>Yes</button>
+		<button onclick='main(2, 4)'>No</button>
+		<br>
+		<img src="images/wake.jpg" alt="">
+	</div>
+	<div id="yesQuest" class="div">
+		<h2>You rush out of the house in search of any leads as to where they could have taken him! You see two trails,
+			one off into the woods and one toward the cave. You also wonder if anyone in the village saw anything? Where
+			do you go?</h2>
+		<button onclick='main(3, 5)'>Woods</button>
+		<button onclick='main(3, 6)'>Cave</button>
+		<button onclick='main(3, 7)'>Village</button>
+	</div>
+	<div id="noQuest" class="div">
+		<h2>Safe choice, however your brother never came home,, you did however get a toe in the mail,,,,
+			odd,,<br>GAMEOVER<br>Play Again?</h2>
+		<button onclick='main(4, 0)'>Reset</button>
+	</div>
+	<div id="wood">
+		<h2>You walk into the woods and start running around looking for your brother, you ghet lost, night
+			falls,hypothermia kicks in, and you freeze to death<br>GAMEOVER<br>Play Again?</h2>
+		<button onclick='main(5, 0)'>Reset</button>
+		<br>
+		<img src="images/wood.jfif" alt="">
+	</div>
+	<div id="cave">
+		<h2>You enter the cave and see three pathways, one to the west, north, and east. You hear a quiet growl come
+			from both the north and east tunnels. Which will you enter?</h2>
+		<button onclick="main(6,10)">West</button>
+		<button onclick="main(6,11)">North</button>
+		<button onclick="main(6,12)">East</button>
+		<br>
+		<img src="images/cave.jpg" alt="">
+	</div>
+	<div id="village">
+		<h2>You run into the village and out comes a random drunkard from the bar and the local preist, who do you wanna
+			try and talk to?</h2>
+		<button onclick="main(7,8)">Drunkard</button>
+		<button onclick="main(7,9)">Preist</button>
+		<br>
+		<img src="images/village.jpg" alt="">
+	</div>
+	<div id="drunkard">
+		<h2>You start yelling franticaly trying to explain what happened when the man freaks out and decks you upside
+			the head,,, everything goes black,, <br>GAMEOVER<br>Play Again?</h2>
+		<button onclick="main(8, 0)">reset</button>
+	</div>
+	<div id="preist">
+		<h2>You explain in a frantic matter to the preist what all happened and he sits you down, trying his best to
+			calm you. finaly you explain what happened and he mentions hearing noices coming from the cave last night.
+			Upon these words you head off to the cave!</h2>
+		<button onclick="main(9, 6)">Cave</button>
+	</div>
+	<div id="pitFall">
+		<h2>you choose to enter the west tunnel and up falling in a spike trap, bleeding out, and dying rather
+			painfully. <br>GAMEOVER<br>Play Again</h2>
+		<button onclick="main(10,0)">reset</button>
+		<br>
+		<img src="images/pitfall.jpg" alt="">
+	</div>
+	<div id="trollRiddleOne">
+		<h2>You decide to go in the north tunnel despite hearing growling, expecting a fight your on guard, yet a troll
+			manages to sneak up on you. he says you may pass if you answer reddle else youll have to fight<br>"There are
+			three apples if u take two away how many apples do u have"</h2>
+		<input type="text" id='riddleOneUser'>
+		<button onclick='submit(11,13)'>Submit</button>
+		<br>
+		<img src="images/download.jfif" alt="">
+	</div>
+	<div id="trollRiddleTwo">
+		<h2>You decide to go in the East tunnel despite hearing growling, expecting a fight your on guard, yet a troll
+			manages to sneak up on you. he says you may pass if you answer reddle else youll have to fight<br>"What has
+			to be broken before you can use it?"</h2>
+		<input type="text" id='riddleTwoUser'>
+		<button onclick='submit(12,13)'>Submit</button>
+		<br>
+		<img src="images/images.jfif" alt="">
+	</div>
+	<div id="splitTwo">
+		<h2>You come across anouther impass, the cave s=plits off into the west, north, and east. where do you go.</h2>
+		<button onclick="main(13, 14)">west</button>
+		<button onclick="main(13, 15)">north</button>
+		<button onclick="main(13, 16)">east</button>
+		<br>
+		<img src="images/cave2.png" alt="">
+	</div>
+	<div id="caveIn">
+		<h2>you start off in the west tunnel, when you hear a *knock kncok* and sudent,y the cave caves in. you ssurvive
+			the initial hit and suffocate in the rocks.<br>GAMEOVER<br>Play Again</h2>
+		<button onclick="main(15,0)">reset</button>
+		<br>
+		<img src="images/https___www.digdifferent.com_uploads_images_Trench-Cave-In-1-color.jpg" alt="">
+	</div>
+	<div id="snake">
+		<h2>yiu choose to go diwn the north tunnel, you come across a snake, scared it rushes you and you get bit. you
+			try to keep going but the toxin keeps your muscels from moving, you dont die from the pioson but rather
+			startvation from not being able to move, stuck in place, unable to grap the food in you back pack. your eyes
+			also becom rather sore as you cant blink,, interesting, wrong tunnel.<br>GAMEOVER<br>Play Again</h2>
+		<button onclick="main(14,0)">reset</button>
+		<br>
+		<img src="images/maxresdefault.jpg" alt="">
+	</div>
+	<div id="freedom">
+		<h2><br>YOU WIN<br>Play Again</h2>
+		<button onclick="main(16,0)">reset</button>
+	</div>
+
+	<script src='script.js'></script>
+</body>
+
+</html>

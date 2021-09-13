@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div id='start' class="div">
+      <h2>What is your name?</h2>
+      <input id='name'>
+      <button id='submit' onclick='start()'>Submit</button>
+    </div>
+
+    <hr>
+    
+    <div id='class' class="div">
+      <h2 id='welcome'>Hello! Welcome to the game, please pick a class</h2>
+      <button onclick='archer()'>Archer</button>
+      <button onclick='fighter()'>Fighter</button>
+      <button onclick='rogue()'>Rogue</button>
+    </div>
+
+    <hr>
+    
+    <div id='wake' class="div">
+      <h2>You wake up and your brother is missing, there is a note on the table and it reads that he has been kidnapped<br>Do you wanna go on a quest?</h2>
+      <button onclick='yesQuest()'>Yes</button>
+      <button onclick='noQuest()'>No</button>
+    </div>
+
+    <hr>
+
+    <div id="yesQuest" class="div">
+      <h2>You rush out of the house in search of any leads as to where they could have taken him! You see two trails, one off into the woods and one toward the cave. You also wonder if anyone in the village saw anything? Where do you go?</h2>
+      <button onclick='wood()'>Woods</button>
+      <button onclick='cave()'>Cave</button>
+      <button onclick='village()'>Village</button>
+    </div>
+
+    <hr>
+
+    <div id="noQuest" class="div">
+      <h2>Safe choice, however your brother never came home,, you did however get a toe in the mail,,,, odd,,<br>GAMEOVER<br>Play Again?</h2>
+      <button onclick='reset()'>Reset</button>
+    </div>
+
+    <hr>
+
+    <div id="wood">
+      <h2>You walk into the woods and start running around looking for your brother, you ghet lost, night falls,hypothermia kicks in, and you freeze to death<br>GAMEOVER<br>Play Again?</h2>
+      <button onclick='reset()'>Reset</button>
+    </div>
+
+    <hr>
+
+    <div id="cave">
+      <h2>You enter the cave and see three pathways, one to the west, north, and east. You hear a quiet growl come from both the north and east tunnels. Which will you enter?</h2>
+      <button onclick="">West</button>
+      <button onclick="">East</button>
+      <button onclick="">North</button>
+    </div>
+
+    <hr>
+
+    <div id="village">
+      <h2>You run into the village and out comes a random drunkard from the bar and the local preist, who do you wanna try and talk to?</h2>
+      <button onclick="drunkard()">Drunkard</button>
+      <button onclick="preist()">Preist</button>
+    </div>
+
+    <hr>
+
+    <div id="drunkard">
+      <h2>You start yelling franticaly trying to explain what happened when the man freaks out and decks you upside the head,,, everything goes black,, <br>GAMEOVER<br>Play Again?</h2>
+      <button onclick="reset()">reset</button>
+    </div>
+
+    <hr>
+
+    <div id="preist">
+      <h2>You explain in a frantic matter to the preist what all happened and he sits you down, trying his best to calm you down. finaly you explain what happened and he mentions hearing noices coming from the cave last night. Upon these words you head off to the cave!</h2>
+    </div>
+
+    <hr>
+
+    <div id="pitFall">
+      <h2>you choose to enter the west tunnel and up falling in a spike trap, bleeding out, and dying rather painfully. <br>GAMEOVER<br>Play Again</h2>
+      <button onclick="reset">reset</button>
+    </div>
+
+    <hr>
+
+    <div id="trollRiddleOne">
+
+    </div>
+
+    <hr>
+
+    <div id="trollRiddleTwo">
+
+    </div>
+
+    <hr>
+
+    <div id="battle">
+
+    </div>
+
+    <hr>
+
+    <div id="caveIn">
+
+    </div>
+
+    <hr>
+
+    <div id="snake">
+
+    </div>
+
+    <hr>
+
+    <div id="freedom">
+
+    </div>
+
+
+
+    <script src='JS/string.js'></script>
+  </body>
+</html>

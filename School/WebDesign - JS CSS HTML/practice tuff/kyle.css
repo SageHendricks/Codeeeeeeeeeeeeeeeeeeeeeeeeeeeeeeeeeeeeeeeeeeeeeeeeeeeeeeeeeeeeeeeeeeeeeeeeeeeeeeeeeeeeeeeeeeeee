@@ -1,0 +1,18 @@
+*{
+ text-align: center;
+ font-style: italic;
+}
+
+body{
+ margin: auto;
+ padding: none;
+ background-color: green;
+}
+
+p{
+ color: orangered;
+}
+
+#mainHeader{
+ color: blue;
+}

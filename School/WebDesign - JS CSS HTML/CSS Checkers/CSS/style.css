@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: blueviolet;
+    margin: 0px;
+    padding: 0px;
+}
+.odd{
+    background-color: red;
+}
+.even{
+    background-color: black;
+}
+.odd, .even{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgb(167, 143, 143);
+    margin: 1px;
+}
+.babysquare{
+    background-color: thistle;
+    height: 30px;
+    width: 30px;
+}
+#word{
+    display: table-caption;
+}
+#CheckerBoard{
+    display: inline;
+}

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h1{
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+#bio{
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+h2{
+    padding-top: 20px;
+}
+h3{
+    padding-bottom: 20px;
+}
+
+#q1, #q3{
+    background-color: aquamarine;
+}

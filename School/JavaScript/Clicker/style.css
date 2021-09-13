@@ -1,0 +1,71 @@
+*{
+    margin: auto;
+    text-align:center;
+}
+
+body, html {
+    height: 100%;
+}
+
+body{
+    /* The image used */
+    background-image: url("background.jpg");
+
+      /* Full height */
+      height: 100%;
+      /*stops the wobble*/
+      max-width: 900px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game{
+    margin: 70px;
+    text-align:center;
+}
+
+/* text color */
+h1, h2, h3, h4{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+/* button */
+#button{
+    background-color: #bf8040;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+/*click button*/
+#scoreButton{
+    background-image: url('target.png');
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+    outline: none;
+}
+
+/* animation */
+h4 {
+    animation: nom 2s ease infinite;
+}
+@keyframes nom{
+    0% {
+        transform: translate(-20px,0px);
+    }
+    50% {
+        transform: translate(20px,0px);
+    }
+    100% {
+        transform: translate(-20px,0px);
+    }
+}
