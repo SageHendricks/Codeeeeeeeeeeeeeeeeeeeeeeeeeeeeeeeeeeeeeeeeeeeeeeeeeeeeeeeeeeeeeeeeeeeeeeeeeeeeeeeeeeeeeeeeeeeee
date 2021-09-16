@@ -1,0 +1,7 @@
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\bin\Debug\rpg.exe.config
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\bin\Debug\rpg.exe
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\bin\Debug\rpg.pdb
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\obj\Debug\rpg.csproj.AssemblyReference.cache
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\obj\Debug\rpg.csproj.CoreCompileInputs.cache
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\obj\Debug\rpg.exe
+C:\Users\Hendricks_Hayden\source\repos\rpg\rpg\obj\Debug\rpg.pdb
