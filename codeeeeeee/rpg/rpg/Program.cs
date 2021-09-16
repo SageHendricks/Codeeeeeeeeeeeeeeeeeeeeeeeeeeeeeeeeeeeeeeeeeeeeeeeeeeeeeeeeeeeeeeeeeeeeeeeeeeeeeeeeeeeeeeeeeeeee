@@ -25,11 +25,14 @@ namespace rpg
     {
         static void Main(string[] args)
         {
-            game();
+
+            int playerX = 1;
+            int playerY = 1;
+            game(playerX, playerY);
             Console.ReadKey();
         }
 
-        static void game()
+        static void game(int X int Y)
         {
 
             List<List<string>> map = new List<List<string>>()
@@ -37,7 +40,7 @@ namespace rpg
                  new List<string>() { "C1","WH","WH","WH","WH","WH","WH","WH","WH","C2" },
                  new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
                  new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
-                 new List<string>() { "WV","00","00","WV","00","00","00","00","00","WV" },
+                 new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
                  new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
                  new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
                  new List<string>() { "WV","00","00","00","00","00","00","00","00","WV" },
@@ -46,15 +49,23 @@ namespace rpg
                  new List<string>() { "C4","WH","WH","WH","WH","WH","WH","WH","WH","C3" }
             };
 
+            map[Y][X] = $"{map[Y][X]}{X}{Y}";
+
+
+            tile[] player = { "         ",
+                              "  ▓▓▓▓   ",
+                              "  ▓▓▓▓   ",
+                              "         " };
+
             tile[] empty = { "         ",
                              "         ",
                              "         ",
                              "         " };
 
-             tile[] wallV = { "▓▓▒▒▒▒▒▓▓",
-                              "▓▓▒▒▒▒▒▓▓",
-                              "▓▓▒▒▒▒▒▓▓",
-                              "▓▓▒▒▒▒▒▓▓" };
+            tile[] wallV = { "▓▓▒▒▒▒▒▓▓",
+                             "▓▓▒▒▒▒▒▓▓",
+                             "▓▓▒▒▒▒▒▓▓",
+                             "▓▓▒▒▒▒▒▓▓" };
 
             tile[] wallH = { "▓▓▓▓▓▓▓▓▓",
                              "▒▒▒▒▒▒▒▒▒",
@@ -90,41 +101,56 @@ namespace rpg
                 {
                     foreach (string j in map[i])
                     {
-                        if ( j.Length == 4 )
-                        switch (j)
+                        if (j.Length > 2)
                         {
-                            case "WV":
-                                Console.Write(wallV[k].Tile);
-                                break;
+                            Console.Write(player[k].Tile);
+                        }
+                        else
+                        {
+                            switch (j)
+                            {
+                                case "WV":
+                                    Console.Write(wallV[k].Tile);
+                                    break;
 
-                            case "WH":
-                                Console.Write(wallH[k].Tile);
-                                break;
+                                case "WH":
+                                    Console.Write(wallH[k].Tile);
+                                    break;
 
-                            case "C1":
-                                Console.Write(wallC1[k].Tile);
-                                break;
+                                case "C1":
+                                    Console.Write(wallC1[k].Tile);
+                                    break;
 
-                            case "C2":
-                                Console.Write(wallC2[k].Tile);
-                                break;
+                                case "C2":
+                                    Console.Write(wallC2[k].Tile);
+                                    break;
 
-                            case "C3":
-                                Console.Write(wallC3[k].Tile);
-                                break;
+                                case "C3":
+                                    Console.Write(wallC3[k].Tile);
+                                    break;
 
-                            case "C4":
-                                Console.Write(wallC4[k].Tile);
-                                break;
+                                case "C4":
+                                    Console.Write(wallC4[k].Tile);
+                                    break;
 
-                            default:
-                                Console.Write(empty[k].Tile);
-                                break;
+                                default:
+                                    Console.Write(empty[k].Tile);
+                                    break;
+                            }
                         }
 
                     }
                     Console.Write("\n");
                 }
+
+            }
+            string button = Console.ReadKey().ToString();
+            switch (button)
+            {
+                case "w":
+                    map[Y][X] = $"{map[Y][X][0]}{map[Y][X][1]}";
+                    game(X, Y + 1);
+                    break;
             }
 
         }
