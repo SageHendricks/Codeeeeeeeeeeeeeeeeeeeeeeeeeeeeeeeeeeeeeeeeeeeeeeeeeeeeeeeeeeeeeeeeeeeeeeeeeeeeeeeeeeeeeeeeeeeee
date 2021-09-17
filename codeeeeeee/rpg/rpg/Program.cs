@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
+using System.Text.RegularExpressions;
 
 public struct tile
 {
@@ -21,11 +23,30 @@ namespace rpg
 {
     class Program
     {
+        public static StreamReader pukes = new StreamReader("../../Usefuk.txt");
+        public static string pukesStr = pukes.ReadToEnd();
+
+        //public static string dumb()
+        //{
+        //    mapStr1.Split('\t');
+        //    return "";
+        //}
+        public static List<List<string>> Bad()
+        {
+            List<string> mapStr1 = pukesStr.Split('\n').ToList();
+            List<List<string>> mapStr2 = new List<List<string>>();
+            foreach (string line in mapStr1)
+            {
+                List<string> temp = Regex.Split(line,"(?:\t|\n|\r|\r\n)").ToList();
+                mapStr2.Add(temp);
+            }
+            return mapStr2;
+        }
         static void Main(string[] args)
         {
             int playerX = 1;
             int playerY = 1;
-
+            List<List<string>> temp = Bad();
             game(playerX, playerY);
 
             Console.ReadKey();
@@ -35,145 +56,135 @@ namespace rpg
         {
 
             // WV WH C1 C2 C3 C4 E1 E2 E3 E4 T1 T2 T3 T4 WC WS
-            List<List<string>> map = new List<List<string>>()
-            {
-                new List<string>() { "C1","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","C2" },
-                new List<string>() { "WV","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","WV" },
-                new List<string>() { "WV","00","WV","00","WH","00","C1","00","C2","00","C3","00","C4","00","WV","00","WS","00","00","00","WV" },
-                new List<string>() { "WV","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","WV" },
-                new List<string>() { "WV","00","E1","00","E2","00","E3","00","E4","00","T1","00","T2","00","T3","00","T4","00","WC","00","WV" },
-                new List<string>() { "WV","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","WV" },
-                new List<string>() { "WV","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","00","WV" },
-                new List<string>() { "C4","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","WH","C3" }
-            };
+            List<List<string>> map = Bad();
 
             map[Y][X] = $"{map[Y][X]}{X}{Y}";
 
             // tiles vvv
-            {
-                tile[] player = { 
-                    "        ",
-                    "  ▓▓▓▓  ",
-                    "  ▓▓▓▓  ",
-                    "        " 
-                };
-                tile[] empty = { 
-                    "        ",
-                    "        ",
-                    "        ",
-                    "        " 
-                };
-                tile[] wallVertical = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallHorizontal = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▒▒▒▒▒▒▒▒",
-                    "▒▒▒▒▒▒▒▒",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallCornerTopLeft = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallCornerTopRight = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallCornerBottomRight = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallCornerBottomLeft = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallEndTop = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallEndRight = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallEndBottom = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallEndLeft = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallTCrossTop = { 
-                    "▓▓▓▓▓▓▓▓",
-                    "▒▒▒▒▒▒▒▒",
-                    "▒▒▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallTCrossRight = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallTCrossBottom = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▒▒",
-                    "▒▒▒▒▒▒▒▒",
-                    "▓▓▓▓▓▓▓▓" 
-                };
-                tile[] wallTCrossLeft = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▓▓"  
-                };
-                tile[] wallCross = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▒▒",
-                    "▒▒▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▓▓" 
-                };
-                tile[] wallSingle = { 
-                    "▓▓▒▒▒▒▓▓",
-                    "▒▒▒▒▒▒▒▒",
-                    "▒▒▒▒▒▒▒▒",
-                    "▓▓▒▒▒▒▓▓" 
+            
+            tile[] player = {
+                "        ",
+                "  ▓     ",
+                "        ",
+                "        "
             };
-            }
+            tile[] empty = {
+                "        ",
+                "        ",
+                "        ",
+                "        "
+            };
+            tile[] wallVertical = {
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallHorizontal = {
+                "▓▓▓▓▓▓▓▓",
+                "▒▒▒▒▒▒▒▒",
+                "▒▒▒▒▒▒▒▒",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallCornerTopLeft = {
+                "▓▓▓▓▓▓▓▓",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallCornerTopRight = {
+                "▓▓▓▓▓▓▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallCornerBottomRight = {
+                "▓▓▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallCornerBottomLeft = {
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallEndTop = {
+                "▓▓▓▓▓▓▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallEndRight = {
+                "▓▓▓▓▓▓▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallEndBottom = {
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallEndLeft = {
+                "▓▓▓▓▓▓▓▓",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallTCrossTop = {
+                "▓▓▓▓▓▓▓▓",
+                "▒▒▒▒▒▒▒▒",
+                "▒▒▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallTCrossRight = {
+                "▓▓▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallTCrossBottom = {
+                "▓▓▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▒▒",
+                "▒▒▒▒▒▒▒▒",
+                "▓▓▓▓▓▓▓▓"
+            };
+            tile[] wallTCrossLeft = {
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallCross = {
+                "▓▓▒▒▒▒▓▓",
+                "▒▒▒▒▒▒▒▒",
+                "▒▒▒▒▒▒▒▒",
+                "▓▓▒▒▒▒▓▓"
+            };
+            tile[] wallSingle = {
+                "▓▓▓▓▓▓▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▒▒▒▒▓▓",
+                "▓▓▓▓▓▓▓▓"
+            };
+            
 
-            Thread.Sleep(300);
+            //Thread.Sleep(300);
 
             Console.Clear();
             for (int i = 0; i < map.Count; i++)
             {
 
-                for (int k = 0; k < 4; k++ )
+                for (int k = 0; k < 4; k++)
                 {
                     foreach (string j in map[i])
                     {
                         if (j.Length > 2)
                         {
-                          Console.Write(player[k].Tile);
+                            Console.Write(player[k].Tile);
                         }
                         else
                         {
@@ -248,47 +259,47 @@ namespace rpg
                             }
                         }
                     }
-                  Console.Write("\n");
+                    Console.Write("\n");
                 }
             }
 
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.W:
-                    if ( map[Y - 1][X] == "00" ) { game(X, Y - 1); }
+                    if (map[Y - 1][X] == "00") { game(X, Y - 1); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.A:
-                    if ( map[Y][X - 1] == "00" ) { game(X - 1, Y); }
+                    if (map[Y][X - 1] == "00") { game(X - 1, Y); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.S:
-                    if ( map[Y + 1][X] == "00" ) { game(X, Y + 1); }
+                    if (map[Y + 1][X] == "00") { game(X, Y + 1); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.D:
-                    if ( map[Y][X + 1] == "00" ) { game(X + 1, Y); }
+                    if (map[Y][X + 1] == "00") { game(X + 1, Y); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.UpArrow:
-                    if ( map[Y - 1][X] == "00" ) { game(X, Y - 1); }
+                    if (map[Y - 1][X] == "00") { game(X, Y - 1); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if ( map[Y][X - 1] == "00" ) { game(X - 1, Y); }
+                    if (map[Y][X - 1] == "00") { game(X - 1, Y); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.DownArrow:
-                    if ( map[Y + 1][X] == "00" ) { game(X, Y + 1); }
-                    else { game(X, Y); } 
+                    if (map[Y + 1][X] == "00") { game(X, Y + 1); }
+                    else { game(X, Y); }
                     break;
                 case ConsoleKey.RightArrow:
-                    if ( map[Y][X + 1] == "00" ) { game(X + 1, Y); }
+                    if (map[Y][X + 1] == "00") { game(X + 1, Y); }
                     else { game(X, Y); }
                     break;
                 case ConsoleKey.Escape:
                     break;
-                default: 
+                default:
                     game(X, Y);
                     break;
             }
