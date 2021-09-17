@@ -26,11 +26,6 @@ namespace rpg
         public static StreamReader pukes = new StreamReader("../../Usefuk.txt");
         public static string pukesStr = pukes.ReadToEnd();
 
-        //public static string dumb()
-        //{
-        //    mapStr1.Split('\t');
-        //    return "";
-        //}
         public static List<List<string>> Bad()
         {
             List<string> mapStr1 = pukesStr.Split('\n').ToList();
@@ -188,121 +183,33 @@ namespace rpg
                         }
                         else
                         {
-                            switch (j)
-                            {
-                                case "WV":
-                                    Console.Write(wallVertical[k].Tile);
-                                    break;
-
-                                case "WH":
-                                    Console.Write(wallHorizontal[k].Tile);
-                                    break;
-
-                                case "C1":
-                                    Console.Write(wallCornerTopLeft[k].Tile);
-                                    break;
-
-                                case "C2":
-                                    Console.Write(wallCornerTopRight[k].Tile);
-                                    break;
-
-                                case "C3":
-                                    Console.Write(wallCornerBottomRight[k].Tile);
-                                    break;
-
-                                case "C4":
-                                    Console.Write(wallCornerBottomLeft[k].Tile);
-                                    break;
-                                case "E1":
-                                    Console.Write(wallEndTop[k].Tile);
-                                    break;
-
-                                case "E2":
-                                    Console.Write(wallEndRight[k].Tile);
-                                    break;
-
-                                case "E3":
-                                    Console.Write(wallEndBottom[k].Tile);
-                                    break;
-
-                                case "E4":
-                                    Console.Write(wallEndLeft[k].Tile);
-                                    break;
-
-                                case "T1":
-                                    Console.Write(wallTCrossTop[k].Tile);
-                                    break;
-
-                                case "T2":
-                                    Console.Write(wallTCrossRight[k].Tile);
-                                    break;
-
-                                case "T3":
-                                    Console.Write(wallTCrossBottom[k].Tile);
-                                    break;
-
-                                case "T4":
-                                    Console.Write(wallTCrossLeft[k].Tile);
-                                    break;
-
-                                case "WC":
-                                    Console.Write(wallCross[k].Tile);
-                                    break;
-
-                                case "WS":
-                                    Console.Write(wallSingle[k].Tile);
-                                    break;
-
-                                default:
-                                    Console.Write(empty[k].Tile);
-                                    break;
-                            }
+                            if (j == "WV") { Console.Write(wallVertical[k].Til); }
+                            else if ( j == "WH") { Console.Write(wallHorizontal[k].Tile); }
+                            else if ( j == "C1") { Console.Write(wallCornerTopLeft[k].Tile); }
+                            else if ( j == "C2") { Console.Write(wallCornerTopRight[k].Tile); }
+                            else if ( j == "C3") { Console.Write(wallCornerBottomRight[k].Tile); }
+                            else if ( j == "C4") { Console.Write(wallCornerBottomLeft[k].Tile); }
+                            else if ( j == "E1") { Console.Write(wallEndTop[k].Tile); }
+                            else if ( j == "E2") { Console.Write(wallEndRight[k].Tile); }
+                            else if ( j == "E3") { Console.Write(wallEndBottom[k].Tile); }
+                            else if ( j == "E4") { Console.Write(wallEndLeft[k].Tile); }
+                            else if ( j == "T1") { Console.Write(wallTCrossTop[k].Tile); }
+                            else if ( j == "T2") { Console.Write(wallTCrossRight[k].Tile); }
+                            else if ( j == "T3") { Console.Write(wallTCrossBottom[k].Tile); }
+                            else if ( j == "T4") { Console.Write(wallTCrossLeft[k].Tile); }
+                            else if ( j == "WC") { Console.Write(wallCross[k].Tile); }
+                            else if ( j == "WS") { Console.Write(wallSingle[k].Tile); }
+                            else { Console.Write(empty[k].Tile); }
                         }
                     }
                     Console.Write("\n");
                 }
             }
-
-            switch (Console.ReadKey().Key)
-            {
-                case ConsoleKey.W:
-                    if (map[Y - 1][X] == "00") { game(X, Y - 1); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.A:
-                    if (map[Y][X - 1] == "00") { game(X - 1, Y); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.S:
-                    if (map[Y + 1][X] == "00") { game(X, Y + 1); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.D:
-                    if (map[Y][X + 1] == "00") { game(X + 1, Y); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.UpArrow:
-                    if (map[Y - 1][X] == "00") { game(X, Y - 1); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.LeftArrow:
-                    if (map[Y][X - 1] == "00") { game(X - 1, Y); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.DownArrow:
-                    if (map[Y + 1][X] == "00") { game(X, Y + 1); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.RightArrow:
-                    if (map[Y][X + 1] == "00") { game(X + 1, Y); }
-                    else { game(X, Y); }
-                    break;
-                case ConsoleKey.Escape:
-                    break;
-                default:
-                    game(X, Y);
-                    break;
-            }
+            var button = Console.ReadKey().Key;
+            if ( button == ConsoleKey.W || button == ConsoleKey.UpArrow ) { if ( map[Y - 1][X] == "  " ) { game(X, Y - 1); }}
+            else if ( button == ConsoleKey.A || button == ConsoleKey.LeftArrow ) { if (map[Y][X - 1] == "  ") { game(X - 1, Y); }}
+            else if ( button == ConsoleKey.S || button == ConsoleKey.DownArrow ) { if (map[Y + 1][X] == "00") { game(X, Y + 1); }}
+            else if ( button == ConsoleKey.D || button == ConsoleKey.RightArrow ) { if (map[Y][X + 1] == "00") { game(X + 1, Y); }}
 
         }
     }
