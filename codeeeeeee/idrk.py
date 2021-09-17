@@ -21,7 +21,6 @@ def fuck_code_accadamy():
         pyautogui.click(500, i)
         i+=31
 
-
     fuck_code_accadamy()
 
 fuck_code_accadamy()
