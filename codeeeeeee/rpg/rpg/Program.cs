@@ -208,8 +208,8 @@ namespace rpg
             var button = Console.ReadKey().Key;
             if ( button == ConsoleKey.W || button == ConsoleKey.UpArrow ) { if ( map[Y - 1][X] == "  " ) { game(X, Y - 1); }}
             else if ( button == ConsoleKey.A || button == ConsoleKey.LeftArrow ) { if (map[Y][X - 1] == "  ") { game(X - 1, Y); }}
-            else if ( button == ConsoleKey.S || button == ConsoleKey.DownArrow ) { if (map[Y + 1][X] == "00") { game(X, Y + 1); }}
-            else if ( button == ConsoleKey.D || button == ConsoleKey.RightArrow ) { if (map[Y][X + 1] == "00") { game(X + 1, Y); }}
+            else if ( button == ConsoleKey.S || button == ConsoleKey.DownArrow ) { if (map[Y + 1][X] == "  ") { game(X, Y + 1); }}
+            else if ( button == ConsoleKey.D || button == ConsoleKey.RightArrow ) { if (map[Y][X + 1] == "  ") { game(X + 1, Y); }}
 
         }
     }
