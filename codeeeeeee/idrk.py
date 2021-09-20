@@ -17,7 +17,8 @@ def fuck_code_accadamy():
     pyautogui.click(970, 715)
 
     i = 250
-    while i <= 750:
+    while i <= 950:
+
         pyautogui.click(500, i)
         i+=31
 
