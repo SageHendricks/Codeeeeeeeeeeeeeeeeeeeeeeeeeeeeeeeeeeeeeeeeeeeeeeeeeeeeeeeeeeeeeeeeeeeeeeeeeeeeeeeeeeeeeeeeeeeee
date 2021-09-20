@@ -59,8 +59,8 @@ namespace rpg
             
             tile[] player = {
                 "        ",
-                "  ▓     ",
-                "        ",
+                "  ▓▓▓▓  ",
+                "  ▓▓▓▓  ",
                 "        "
             };
             tile[] empty = {
