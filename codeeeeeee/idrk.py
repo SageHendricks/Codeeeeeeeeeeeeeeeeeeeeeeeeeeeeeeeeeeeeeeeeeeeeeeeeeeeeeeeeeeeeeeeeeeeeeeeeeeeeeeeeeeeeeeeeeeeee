@@ -3,7 +3,7 @@ import time
 import keyboard
 
 # must have code acadamy as 3rd tab and full screen
-# open terminal and run "py -m pip install pyautogui time keyboard"
+# open terminal and run "py -m pip install pyautogui keyboard"
 
 def fuck_code_accadamy():
     keyboard.press_and_release('ctrl+enter')
